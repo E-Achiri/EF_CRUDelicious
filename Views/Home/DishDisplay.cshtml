@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> @ViewBag.Dish.Name</title>
+</head>
+<body>
+    <p><a href="/">Home</a></p>
+
+    <partial name="DishDataPartial" view-data="ViewData"></partial>
+        
+    <div>
+        <button id="deletebutton" onclick="window.location.href='/delete/@ViewBag.Dish.DishId'">Delete</button>
+
+        <button id="editbutton" onclick="window.location.href='/edit/@ViewBag.Dish.DishId'">Edit</button>
+    </div>
+    
+</body>
+</html>

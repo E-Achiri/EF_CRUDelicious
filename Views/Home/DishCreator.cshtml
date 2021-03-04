@@ -1,0 +1,58 @@
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using EF_CRUDelicious.Models
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dish Creator</title>
+</head>
+<body>
+    <div class="text-center">
+    <h1 class="display-4">Add A New Dish!</h1>
+    <p><a href="/">Home</a></p>
+
+    <br>
+    @model Dish
+    <form asp-action="DishResult" asp-controller="Home" method="post">
+        <div class="formsegment">
+            <label asp-for="ChefName">Chef's Name</label>
+            <span asp-validation-for="ChefName"></span>
+                <input asp-for="ChefName"><br>
+
+            <label asp-for="Name">Name</label>
+            <span asp-validation-for="Name"></span>
+                <input asp-for="Name"><br>
+
+            <label asp-for="Calories"># of Calories</label>
+            <span asp-validation-for="Calories"></span>
+            <input asp-for="Calories"><br>
+
+        </div>
+        <div class="formsegment">
+            <label asp-for="Tastiness">Tastiness:</label>
+            <span asp-validation-for="Tastiness"></span>
+                <select asp-for="Tastiness" id='tastiness'>
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=5>5</option>
+                </select><br>
+        </div>
+        <div class="formsegment">
+                <label asp-for="Description">Description:</label><br>
+            <span asp-validation-for="Description"></span>
+                <textarea asp-for="Description" id="descriptions" cols="60" rows="4"></textarea>
+            
+            
+        </div>
+        <input type="submit" value="Add Dish" id="button"></input>
+    </form>
+</div>
+    
+    
+</body>
+</html>
